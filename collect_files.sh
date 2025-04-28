@@ -3,8 +3,10 @@
 input_dir="$1"
 output_dir="$2"
 
-find "$input_dir" -type f | while read file; do
+mkdir -p "${output_dir}"
 
-cp "$file" "$output_dir/$(basename "$file")"
+find "$input_dir" -type f | while read filename; do
+
+cp "$filename" "$output_dir/$(basename "$filename")"
 
 done
